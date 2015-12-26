@@ -1,0 +1,43 @@
+<Doctype !html>
+<html lang = "en-uk">
+<html>
+<head>
+
+</head>
+<body>
+
+<input id = "theInput" type="text">
+
+<button onclick=getElementById("output").innerHTML=longestWord()>Click Me</button>
+<p id="output">hi there</p>
+<script>
+//alert("Hi there");
+
+function longestWord(){
+	var sen = document.getElementById("theInput").value;
+	var longest = "";
+	var current = "";
+	for (i = 0; i < sen.length; i++)
+	{
+		if  (isLetter(sen.charAt(i)) == true)
+		{
+			current += sen.charAt(i);
+		}
+		if (isLetter(sen.charAt(i)) == false || i == sen.length - 1)
+		{
+			if (current.length > longest.length)
+			{
+				longest = current;
+			}
+			current = "";
+		}
+	}
+	return longest;
+}
+
+function isLetter(l) {
+  return l.toLowerCase() !== l.toUpperCase();
+}
+</script>
+</body>
+</html>
